@@ -1,0 +1,68 @@
+toc:
+    - name: Main Modules
+    - DerivAPI
+    - DerivAPIBasic
+    - name: Abstract Objects
+    - name: Immutables
+      description: |
+          Abstract objects that provide static content and methods to make
+          use of them, changing internal fields of these objects is blocked
+          and they do not receive updates.
+    - Account
+    - Assets
+    - Underlying
+    - Tick
+    - Candle
+    - Transaction
+    - ContractOptions
+    - Buy
+    - Sell
+    - name: Streams
+      description: |
+          Live stream of data, plus some dynamically updated fields, you
+          can subscribe to changes using the `onUpdate` method on all of
+          these classes.
+    - Balance
+    - Candles
+    - Contract
+    - Ticks
+    - Transactions
+    - WebsiteStatus
+    - name: Fields
+      description: |
+          Container classes for data types, providing means to convert them
+          to other types and represent them to the UI. These are mostly
+          simpler objects used for representing data.
+
+      
+    - Barrier
+    - CustomDate
+    - DateRange
+    - Duration
+    - DurationRange
+    - FullName
+    - MarketValue
+    - Monetary
+    - Profit
+    - Spot
+    - name: Types
+      description: |
+          Types internally used for immutable and stream objects
+    - Immutable
+    - Stream
+    - name: Core Functionality
+    - Cache
+    - SubscriptionManager
+    - name: Object References
+      description: |
+          These are plain JavaScript objects that are named to easily refer to
+          them in this documentation, they don't physically exist as a class
+          in this codebase.
+    - name: Parameters
+    - CandlesParam
+    - TicksParam
+    - BuyParam
+    - SellParam
+    - ContractParam
+    - HistoryRange
+    - name: API Calls
