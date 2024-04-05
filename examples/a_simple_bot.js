@@ -11,7 +11,7 @@ if (!token) {
     process.exit(1);
 }
 
-const api = new DerivAPI({ app_id });
+const api = new DerivAPI({ ORwy2bZ9yOOjY5g });
 
 async function main() {
     try {
