@@ -1,0 +1,67 @@
+{
+  "name": "@deriv/deriv-api",
+  "version": "1.0.11",
+  "description": "Websocket API for Deriv applications",
+  "main": "dist/DerivAPI.js",
+  "unpkg": "dist/DerivAPI.js",
+  "files": [
+    "dist/*.js"
+  ],
+  "scripts": {
+    "test": "jest --verbose --forceExit",
+    "build": "webpack --config webpack.config.js",
+    "examples": "npm run build -- --display=none; for e in examples/*; do node $e; done",
+    "coverage": "codecov",
+    "devel": "npm test -- --watch --notify --onlyChanged",
+    "lint": "eslint",
+    "syntax": "npm run lint 'src/**/*.js'",
+    "test_all": "npm test && npm run syntax",
+    "prettify": "eslint --fix 'src/**/*.js' src/",
+    "docs": "npx documentation build src/DerivAPI.js --config docs/config.md.yml -f md -o docs/DerivAPI.md --markdown-toc-max-depth 4",
+    "gh-pages": "npx documentation build src/DerivAPI.js --config docs/config.html.yml -f html -o /tmp/deriv-api-docs; git add -A .; git stash; git checkout gh-pages; cp -r /tmp/deriv-api-docs/* .; git add -A .; git commit -m 'Update docs'; git push origin gh-pages; git checkout -",
+    "serve_docs": "npx documentation serve src/DerivAPI.js --watch --config docs/config.html.yml",
+    "devel_docs": "while :; do clear; inotifywait -r src/ && npm run docs || break; done",
+    "prepublish": "npm run test_all && npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run docs && npm run prettify && git add ."
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binary-com/deriv-api.git"
+  },
+  "author": "Deriv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binary-com/deriv-api/issues"
+  },
+  "homepage": "https://github.com/binary-com/deriv-api#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.6.0",
+    "babel-jest": "^27.4.6",
+    "babel-loader": "^8.2.3",
+    "codecov": "^3.6.5",
+    "documentation": "^13.2.5",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-align-assignments": "^1.0.0",
+    "eslint-plugin-arca": "^0.16.0",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^7.0.4",
+    "jest": "^29.7.0",
+    "webpack": "^5.67.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2",
+    "ws": "^8.4.2"
+  },
+  "dependencies": {
+    "dayjs": "^1.8.15",
+    "json-stable-stringify": "^1.0.1",
+    "rxjs": "^6.5.2"
+  }
+}
