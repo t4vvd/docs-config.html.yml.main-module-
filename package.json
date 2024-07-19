@@ -52,7 +52,7 @@
     "eslint-plugin-align-assignments": "^1.0.0",
     "eslint-plugin-arca": "^0.16.0",
     "eslint-plugin-import": "^2.18.0",
-    "husky": "^7.0.4",
+    "husky": "^9.1.1",
     "jest": "^27.4.7",
     "webpack": "^5.67.0",
     "webpack-bundle-analyzer": "^4.5.0",
