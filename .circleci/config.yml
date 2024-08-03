@@ -4170,3 +4170,11 @@ npm run build
 ```
 DERIV_TOKEN=YourTokenHere npm run examples
 ```
+module.exports = {
+    presets: [
+        [
+            '@babel/preset-env',
+        ],
+    ],
+    plugins: ['@babel/plugin-transform-runtime']
+};
